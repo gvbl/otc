@@ -7,9 +7,7 @@ group = "com.otc"
 version = "1.0.0"
 
 repositories {
-    jcenter()
     mavenCentral()
-    maven("https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven")
 }
 
 kotlin {
@@ -42,6 +40,7 @@ kotlin {
                 implementation("io.ktor:ktor-server-netty:2.0.2")
                 implementation("io.ktor:ktor-server-html-builder-jvm:2.0.2")
                 implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.7.2")
+                implementation("ch.qos.logback:logback-classic:1.4.5")
             }
         }
         val jvmTest by getting

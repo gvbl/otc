@@ -4,3 +4,4 @@
 /build/classes/kotlin/jvm/main/
 /build/js/packages/ec2/kotlin/
 /.idea/
+/gradle/wrapper/gradle-7.6-bin.zip
