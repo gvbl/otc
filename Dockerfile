@@ -4,6 +4,7 @@ ENV ORG_GRADLE_PROJECT_isProduction=true
 
 COPY . /otc
 WORKDIR /otc
+RUN chmod +x gradlew
 RUN ./gradlew build --no-daemon
 RUN ./gradlew install --no-daemon
 
