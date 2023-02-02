@@ -1,5 +1,9 @@
+val ktorVersion = "2.2.3"
+val kmongoVersion = "4.8.0"
+
 plugins {
     kotlin("multiplatform") version "1.7.21"
+    kotlin("plugin.serialization") version "1.4.0"
     application
 }
 
@@ -29,7 +33,11 @@ kotlin {
         }
     }
     sourceSets {
-        val commonMain by getting
+        val commonMain by getting {
+            dependencies {
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")
+            }
+        }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
@@ -37,10 +45,18 @@ kotlin {
         }
         val jvmMain by getting {
             dependencies {
-                implementation("io.ktor:ktor-server-netty:2.0.2")
-                implementation("io.ktor:ktor-server-html-builder-jvm:2.0.2")
+                implementation("io.ktor:ktor-server-netty:$ktorVersion")
+                implementation("io.ktor:ktor-server-content-negotiation:$ktorVersion")
+                implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
+                implementation("io.ktor:ktor-server-cors:$ktorVersion")
+                implementation("io.ktor:ktor-server-compression:$ktorVersion")
+                implementation("io.ktor:ktor-server-html-builder-jvm:$ktorVersion")
+                implementation("io.ktor:ktor-server-sessions:$ktorVersion")
+                implementation("io.ktor:ktor-server-rate-limit:$ktorVersion")
+                implementation("org.jetbrains.kotlinx:atomicfu:0.19.0")
                 implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.7.2")
                 implementation("ch.qos.logback:logback-classic:1.4.5")
+                implementation("org.litote.kmongo:kmongo:$kmongoVersion")
             }
         }
         val jvmTest by getting
@@ -48,6 +64,10 @@ kotlin {
             dependencies {
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-react:18.2.0-pre.346")
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom:18.2.0-pre.346")
+                implementation("org.jetbrains.kotlin-wrappers:kotlin-react-router-dom:6.3.0-pre.346")
+                implementation("io.ktor:ktor-client-js:$ktorVersion")
+                implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
+                implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-emotion:11.9.3-pre.346")
             }
         }
