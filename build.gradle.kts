@@ -1,5 +1,6 @@
 val ktorVersion = "2.2.3"
 val kmongoVersion = "4.8.0"
+val isProduction = System.getenv("ORG_GRADLE_PROJECT_isProduction") == "true"
 
 plugins {
     kotlin("multiplatform") version "1.7.21"
@@ -29,6 +30,9 @@ kotlin {
         browser {
             commonWebpackConfig {
                 cssSupport.enabled = true
+                if (isProduction) {
+                    devtool = null
+                }
             }
         }
     }
