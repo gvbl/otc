@@ -11,11 +11,11 @@ val DesksList = FC<Props> {
     val spaceState = useContext(SpaceContext)
     val space = spaceState.space!!
     ul {
-        className = ClassName("columns is-multiline")
+        className = ClassName("columns is-mobile is-multiline")
         space.desks.forEach {
             li {
                 key = it.id.toString()
-                className = ClassName("column is-one-quarter")
+                className = ClassName("column is-half-mobile is-one-quarter-widescreen")
                 DesksListItem {
                     desk = it
                 }
@@ -23,7 +23,7 @@ val DesksList = FC<Props> {
         }
         li {
             key = "AddDesk"
-            className = ClassName("column is-one-quarter")
+            className = ClassName("column is-half-mobile is-one-quarter-widescreen")
             AddDeskItem { }
         }
         div {
