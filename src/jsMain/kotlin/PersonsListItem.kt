@@ -24,9 +24,12 @@ val PersonsListItem = FC<PersonsListItemProps> { props ->
     val hideModal = useContext(HideModalContext)
     var isMouseOver by useState(false)
     var isDragging by useState(false)
-    window.requestAnimationFrame {
-        if (isDragging) {
-            hideModal()
+    val isMobile = useIsMobile()
+    if (isMobile) {
+        window.requestAnimationFrame {
+            if (isDragging) {
+                hideModal()
+            }
         }
     }
     span {
