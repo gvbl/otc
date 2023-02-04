@@ -29,7 +29,7 @@ import kotlin.time.Duration.Companion.seconds
 
 val connectionString: ConnectionString? = System.getenv("MONGODB_URI")?.let { ConnectionString(it) }
 val client = if (connectionString != null) KMongo.createClient(connectionString) else KMongo.createClient()
-val database: MongoDatabase = client.getDatabase(connectionString?.database ?: "OTC-Dev")
+val database: MongoDatabase = client.getDatabase(connectionString?.database ?: "otc")
 
 val spaces = database.getCollection<Space>()
 
