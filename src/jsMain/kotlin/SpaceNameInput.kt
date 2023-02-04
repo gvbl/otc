@@ -32,14 +32,16 @@ val SpaceNameInput = FC<Props> {
     }
 
     val blurHandler: FocusEventHandler<HTMLInputElement> = {
-        scope.launch {
-            if (text.isEmpty()) {
-                text = Space.DefaultName
-                patchSpace(space.copy(name = Space.DefaultName))
-            } else {
-                patchSpace(space.copy(name = text))
+        if (text != space.name) {
+            scope.launch {
+                if (text.isEmpty()) {
+                    text = Space.DefaultName
+                    patchSpace(space.copy(name = Space.DefaultName))
+                } else {
+                    patchSpace(space.copy(name = text))
+                }
+                spaceState.update()
             }
-            spaceState.update()
         }
     }
 
