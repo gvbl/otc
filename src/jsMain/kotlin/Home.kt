@@ -52,9 +52,11 @@ val Home = FC<Props> {
         }
     }
     div {
-        className = ClassName("section is-large")
+        css(ClassName("mx-2 is-flex is-justify-content-center is-align-items-center")) {
+            height = 66.pct
+        }
         div {
-            className = ClassName("mx-4 is-flex is-flex-direction-column is-justify-content-center is-align-items-center")
+            className = ClassName("is-flex is-flex-direction-column is-justify-content-center is-align-items-center")
             p {
                 className = ClassName("is-size-2 has-text-weight-semibold has-text-centered")
                 +"Manage shared desks with OTC"
