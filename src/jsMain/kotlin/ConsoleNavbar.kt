@@ -40,6 +40,7 @@ val ConsoleNavbar = FC<Props> {
                         a {
                             className = ClassName("button is-white")
                             onClick = {
+                                isMenuActive = false
                                 isHelpActive = true
                             }
                             +"Help"
@@ -50,6 +51,7 @@ val ConsoleNavbar = FC<Props> {
                         a {
                             className = ClassName("button is-light")
                             onClick = {
+                                isMenuActive = false
                                 isSettingsActive = true
                             }
                             span {

@@ -34,6 +34,9 @@ val HomeBottomNavbar = FC<Props> {
                         className = ClassName("navbar-item")
                         href = "/legal"
                         +"Legal"
+                        onClick = {
+                            isMenuActive = false
+                        }
                     }
                 }
             }

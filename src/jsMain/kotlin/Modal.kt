@@ -18,7 +18,7 @@ val Modal = FC<ModalProps> { props ->
         }
     })
     div {
-        className = ClassName("modal$activeClass")
+        className = ClassName("modal$activeClass p-1")
         div {
             className = ClassName("modal-background")
             onClick = {
