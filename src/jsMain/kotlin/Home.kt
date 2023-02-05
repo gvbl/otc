@@ -72,7 +72,7 @@ val Home = FC<Props> {
                 onClick = {
                     scope.launch {
                         val id = addSpace()
-                        navigate("/console/$id")
+                        navigate("/shared-space/$id")
                     }
                 }
                 +"Get started: OTC is free!"
