@@ -19,9 +19,14 @@ import kotlin.time.Duration
 
 const val DragDropDemoPath = "https://storage.googleapis.com/otc-assets/resources/gifs/help/dd-demo.gif"
 const val DragDropPlaceholderPath = "https://storage.googleapis.com/otc-assets/resources/gifs/help/dd-demo-first-frame.png"
+const val DragDropDemoMobilePath = "https://storage.googleapis.com/otc-assets/resources/gifs/help/dd-demo-mobile.gif"
+const val DragDropMobilePlaceholderPath = "https://storage.googleapis.com/otc-assets/resources/gifs/help/dd-demo-mobile-first-frame.png"
 
 val HelpModal = FC<ModalProps> { props ->
-    var gifSrc by useState(DragDropDemoPath)
+    val isMobile = useIsMobile()
+    val placeholderPath = if (isMobile) DragDropPlaceholderPath else DragDropMobilePlaceholderPath
+    val demoPath = if (isMobile) DragDropDemoMobilePath else DragDropDemoPath
+    var gifSrc by useState(demoPath)
     Modal {
         isModalActive = props.isModalActive
         onClose = props.onClose
@@ -46,7 +51,7 @@ val HelpModal = FC<ModalProps> { props ->
                     className = ClassName("has-text-weight-bold")
                     +"Bookmark this page!"
                 }
-                +" OTC works without an account.  Instead of a username and password, you will use a private link (the URL of this page) to access your workspace.  Keep it in a safe place and only share it with your team!"
+                +" OTC does not use accounts.  Anyone who obtains the URL to this page may access your workspace.  Only share it with your team!"
                 button {
                     css(ClassName("button mt-2")) {
                         float = Float.right
@@ -64,7 +69,14 @@ val HelpModal = FC<ModalProps> { props ->
                         position = Position.relative
                     }
                     figure {
+                        className = ClassName("is-flex is-justify-content-center")
                         img {
+                            css {
+                                if (isMobile) {
+                                    width = 187.px
+                                    height = 322.px
+                                }
+                            }
                             src = gifSrc
                         }
                     }
@@ -78,9 +90,9 @@ val HelpModal = FC<ModalProps> { props ->
                             padding = important(Padding(0.px, 0.9.em, 0.px, 1.1.em))
                         }
                         onClick = {
-                            gifSrc = DragDropPlaceholderPath
+                            gifSrc = placeholderPath
                             setTimeout(Duration.ZERO) {
-                                gifSrc = DragDropDemoPath
+                                gifSrc = demoPath
                             }
                         }
                         span {
