@@ -113,7 +113,8 @@ val DesksListItem = FC<DesksListItemProps> { props ->
                 position = Position.absolute
                 top = 0.5.rem
                 right = 0.5.rem
-                visibility = if ((isMouseOver && !isDraggingOver) || isTouchDevice()) Visibility.visible else Visibility.hidden
+                visibility =
+                    if ((isMouseOver && !isDraggingOver) || isTouchDevice()) Visibility.visible else Visibility.hidden
             }
             onClick = {
                 scope.launch {

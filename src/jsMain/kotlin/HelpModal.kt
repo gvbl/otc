@@ -18,9 +18,11 @@ import react.useState
 import kotlin.time.Duration
 
 const val DragDropDemoPath = "https://storage.googleapis.com/otc-assets/resources/gifs/help/dd-demo.gif"
-const val DragDropPlaceholderPath = "https://storage.googleapis.com/otc-assets/resources/gifs/help/dd-demo-first-frame.png"
+const val DragDropPlaceholderPath =
+    "https://storage.googleapis.com/otc-assets/resources/gifs/help/dd-demo-first-frame.png"
 const val DragDropDemoMobilePath = "https://storage.googleapis.com/otc-assets/resources/gifs/help/dd-demo-mobile.gif"
-const val DragDropMobilePlaceholderPath = "https://storage.googleapis.com/otc-assets/resources/gifs/help/dd-demo-mobile-first-frame.png"
+const val DragDropMobilePlaceholderPath =
+    "https://storage.googleapis.com/otc-assets/resources/gifs/help/dd-demo-mobile-first-frame.png"
 
 val HelpModal = FC<ModalProps> { props ->
     val isMobile = useIsMobile()
@@ -110,7 +112,7 @@ val HelpModal = FC<ModalProps> { props ->
                     +"Contact: "
                 }
                 a {
-                    href="mailto:support@otcontrol.com"
+                    href = "mailto:support@otcontrol.com"
                     +"support@otcontrol.com"
                 }
             }

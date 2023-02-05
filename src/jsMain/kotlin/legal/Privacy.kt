@@ -7,7 +7,6 @@ import emotion.react.css
 import react.FC
 import react.Props
 import react.dom.html.ReactHTML.pre
-import rootURL
 
 val Privacy = FC<Props> {
     pre {

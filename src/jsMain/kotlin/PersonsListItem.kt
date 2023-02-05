@@ -76,7 +76,8 @@ val PersonsListItem = FC<PersonsListItemProps> { props ->
         }
         button {
             css(ClassName("delete")) {
-                visibility = if ((isMouseOver && !isDragging) || isTouchDevice()) Visibility.visible else Visibility.hidden
+                visibility =
+                    if ((isMouseOver && !isDragging) || isTouchDevice()) Visibility.visible else Visibility.hidden
             }
             onClick = {
                 scope.launch {

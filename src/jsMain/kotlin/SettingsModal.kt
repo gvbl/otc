@@ -2,10 +2,8 @@ import csstype.ClassName
 import csstype.Display
 import csstype.JustifyContent
 import emotion.react.css
-import kotlinx.browser.window
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
-import org.w3c.dom.events.KeyboardEvent
 import react.FC
 import react.dom.html.ReactHTML.button
 import react.dom.html.ReactHTML.div
