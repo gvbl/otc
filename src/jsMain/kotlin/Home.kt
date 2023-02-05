@@ -44,7 +44,7 @@ val Home = FC<Props> {
                 spaces.forEach {
                     a {
                         className = ClassName("button mx-2 my-1")
-                        href = "/console/${it.id}"
+                        href = "/shared-space/${it.id}"
                         +it.name
                     }
                 }

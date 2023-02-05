@@ -14,7 +14,7 @@ val App = FC<Props> {
             }
 
             Route {
-                path = "console/*"
+                path = "shared-space/*"
                 element = createElement(Console)
             }
 

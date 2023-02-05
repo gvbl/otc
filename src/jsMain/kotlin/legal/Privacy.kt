@@ -15,7 +15,7 @@ val Privacy = FC<Props> {
             whiteSpace = WhiteSpace.preLine
         }
         +"""
-        Cookies are used to store identifiers of the workspaces created on your device and are not used for any other purposes.
+        Cookies are used to store identifiers of the shared spaces created on your device and are not used for any other purposes.
         
         We may update this privacy policy from time to time in order to reflect, for example, changes to our practices or for other operational, legal or regulatory reasons.
         

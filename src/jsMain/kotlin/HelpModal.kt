@@ -53,7 +53,7 @@ val HelpModal = FC<ModalProps> { props ->
                     className = ClassName("has-text-weight-bold")
                     +"Bookmark this page!"
                 }
-                +" OTC does not use accounts.  Anyone who obtains the URL to this page may access your workspace.  Only share it with your team!"
+                +" OTC does not use accounts.  Anyone who obtains the URL to this page may access your shared space.  Only share it with your team!"
                 button {
                     css(ClassName("button mt-2")) {
                         float = Float.right
