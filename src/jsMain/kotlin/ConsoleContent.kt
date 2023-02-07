@@ -16,14 +16,14 @@ val ConsoleContent = FC<Props> {
                 css {
                     padding = 0.75.rem
                     flexBasis = 25.pct
-                    overflowY = Overflow.scroll
+                    overflowY = Auto.auto
                 }
                 PersonsList { }
             }
         }
         div {
             css(ClassName("column")) {
-                overflowY = Overflow.scroll
+                overflowY = Auto.auto
             }
             DesksList { }
         }

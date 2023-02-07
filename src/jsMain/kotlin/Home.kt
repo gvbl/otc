@@ -37,7 +37,7 @@ val Home = FC<Props> {
         div {
             css {
                 height = 3.em
-                overflowX = Overflow.scroll
+                overflowX = Auto.auto
                 whiteSpace = WhiteSpace.nowrap
             }
             if (spaces.isNotEmpty()) {
